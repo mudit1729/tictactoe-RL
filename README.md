@@ -2,7 +2,7 @@
 
 This is a graphical interface for playing Tic-tac-toe against an AI that uses reinforcement learning algorithms (Q-Learning and SARSA). The GUI interface is shown in `tic_tac_gui.png`:
 
-![Tic Tac Toe GUI Screenshot](tic_tac_gui.png)
+![Tic Tac Toe GUI Screenshot](images/tic_tac_gui.png)
 
 ## Features
 
