@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe RL Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">GitHub Pages Demo</p>
+        <h1>Tic-Tac-Toe RL Arena</h1>
+        <p class="hero-copy">
+          Play against a tiny policy network trained in this repo. The default mode
+          uses the stronger network that was trained with MCTS-guided action
+          selection.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel controls">
+          <div class="panel-header">
+            <h2>Match Setup</h2>
+            <span id="modelBadge" class="badge">Loading model...</span>
+          </div>
+
+          <label class="control-group">
+            <span>Policy</span>
+            <select id="modelSelect">
+              <option value="dqn_mcts_model.json">DQN + MCTS-trained</option>
+              <option value="dqn_model.json">Plain DQN</option>
+            </select>
+          </label>
+
+          <div class="button-row">
+            <button id="humanFirstBtn" class="action-button">New Game: You First</button>
+            <button id="aiFirstBtn" class="action-button muted">New Game: AI First</button>
+          </div>
+
+          <div class="score-card">
+            <div>
+              <span class="score-label">You</span>
+              <strong id="humanScore">0</strong>
+            </div>
+            <div>
+              <span class="score-label">Draws</span>
+              <strong id="drawScore">0</strong>
+            </div>
+            <div>
+              <span class="score-label">AI</span>
+              <strong id="aiScore">0</strong>
+            </div>
+          </div>
+
+          <p id="statusText" class="status">Loading exported weights...</p>
+          <p class="note">
+            The browser demo runs direct network inference for responsiveness. The
+            training-time search itself is not replayed here.
+          </p>
+        </section>
+
+        <section class="panel board-panel">
+          <div id="board" class="board" aria-label="Tic-Tac-Toe board"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
